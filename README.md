@@ -17,9 +17,9 @@ To get started with the Commit Message Generator, please follow the instructions
 
 For a comprehensive guide on how to use the Commit Message Generator, please refer to the following documents:
 
-- [Installation Guide](INSTALLATION.md) - Instructions on how to install and set up the Commit Message Generator on your machine.
-- [Usage Guide](USAGE.md) - Examples and usage details for creating commit messages. 
-- [API Reference](API_REFERENCE.md) - Detailed description of the API endpoints and usage.
+- [Installation Guide](./docs/INSTALLATION.md) - Instructions on how to install and set up the Commit Message Generator on your machine.
+- [Usage Guide](./docs/USAGE.md) - Examples and usage details for creating commit messages. 
+- [API Reference](./docs/API_REFERENCE.md) - Detailed description of the API endpoints and usage.
 
 ## Running the Tests
 
@@ -28,12 +28,6 @@ Ensure the functionality of the Commit Message Generator by running the included
 ```bash
 python -m unittest
 ```
-
-## Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**. 
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests to us.
 
 ## License
 
