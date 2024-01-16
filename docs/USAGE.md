@@ -1,4 +1,3 @@
-### USAGE.md
 
 # Usage
 
@@ -9,10 +8,8 @@ After installing the Commit Message Generator, you can use it to create standard
 To generate a commit message using the command-line interface:
 
 ```bash
-python commit_message_generator.py --type feat --scope authentication --description "add OAuth2 support"
+python commit_message_generator.py 
 ```
-
-Replace the `type`, `scope`, and `description` with appropriate values for your commit. 
 
 ## Unit Tests
 

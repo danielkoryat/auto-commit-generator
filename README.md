@@ -11,7 +11,7 @@ The Commit Message Generator is a utility designed to create structured and stan
 
 ## Quick Start
 
-To get started with the Commit Message Generator, please follow the instructions in [INSTALLATION.md](INSTALLATION.md) to set up the script on your system. Once installed, you can generate a commit message by following the example usage in [USAGE.md](USAGE.md).
+To get started with the Commit Message Generator, please follow the instructions in [INSTALLATION.md](./docs/INSTALLATION.md) to set up the script on your system. Once installed, you can generate a commit message by following the example usage in [USAGE.md](./docs/USAGE.md).
 
 ## Documentation
 

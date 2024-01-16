@@ -1,5 +1,4 @@
 
-### INSTALLATION.md
 
 # Installation
 

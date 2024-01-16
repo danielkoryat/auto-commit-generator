@@ -1,51 +1,45 @@
 import unittest
-from unittest.mock import patch, Mock
-from src import commit_message_generator 
+from unittest.mock import patch, MagicMock
+from src import generate_commit_message  
 
-class TestScript(unittest.TestCase):
+class TestCommitMessageGenerator(unittest.TestCase):
 
-    @patch('your_script_name.os.getenv')
-    @patch('your_script_name.requests.post')
-    def test_generate_commit_message(self, mock_post, mock_getenv):
-        # Setup the environment variable
-        mock_getenv.return_value = 'test_app_type'
-        
-        # Mock the API response
-        mock_response = Mock()
+    def setUp(self):
+        # Set up any initial variables or configurations you need
+        self.diff = 'diff --git a/file.txt b/file.txt\nnew file mode 100644\nindex 0000000..e69de29'
+        self.app_type = 'Python'
+        self.api_key = 'test_api_key'
+
+    @patch('requests.post')
+    def test_generate_commit_message(self, mock_post):
+        # Mocking the API response
+        mock_response = MagicMock()
         mock_response.json.return_value = {
-            'choices': [{'message': {'content': 'Test commit message'}}]
+            'choices': [{
+                'message': {
+                    'content': 'Add a new Python file to improve XYZ feature.'
+                }
+            }]
         }
-        mock_response.raise_for_status = Mock()
+        mock_response.raise_for_status = MagicMock()
         mock_post.return_value = mock_response
-        
-        # Call the function with a dummy diff
-        result = commit_message_generator.generate_commit_message('dummy diff')
-        
-        # Assertions
-        self.assertEqual(result, 'Test commit message')
+
+        # Call the function you are testing
+        commit_message = generate_commit_message(self.diff)
+
+        # Assertions to check if the results are as expected
+        self.assertIsNotNone(commit_message)
+        self.assertEqual(commit_message, 'Add a new Python file to improve XYZ feature.')
+
+        # Check if API was called correctly
         mock_post.assert_called_once()
-        mock_getenv.assert_called_with('OPENAI_API_KEY')
+        _, kwargs = mock_post.call_args
+        self.assertIn('json', kwargs)
+        self.assertEqual(kwargs['json']['model'], 'gpt-3.5-turbo')
+        self.assertIn('Authorization', kwargs['headers'])
+        self.assertTrue(kwargs['headers']['Authorization'].startswith('Bearer'))
 
-    @patch('your_script_name.subprocess.check_output')
-    def test_get_staged_diff(self, mock_check_output):
-        # Mock the subprocess output
-        mock_check_output.return_value = 'dummy diff output'
-
-        # Call the function
-        result = commit_message_generator.get_staged_diff()
-
-        # Assertions
-        self.assertIsInstance(result, str)
-        mock_check_output.assert_called_with(['git', 'diff', '--cached'], text=True)
-
-    @patch('your_script_name.subprocess.check_output')
-    def test_commit_changes(self, mock_check_output):
-        # Call the function with a dummy commit message
-        commit_message_generator.commit_changes('Test commit message')
-
-        # Assertions
-        mock_check_output.assert_called_with(['git', 'commit', '-m', 'Test commit message'])
-
+    # Add more tests as needed to cover different scenarios and edge cases
 
 if __name__ == '__main__':
     unittest.main()
