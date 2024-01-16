@@ -1,7 +1,6 @@
 
 ### INSTALLATION.md
 
-```markdown
 # Installation
 
 ## Prerequisites
@@ -42,6 +41,5 @@ pip install -r requirements.txt
 ```
 
 The Commit Message Generator is now installed and ready for use.
-```
 
 

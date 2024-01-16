@@ -1,6 +1,5 @@
 ### USAGE.md
 
-```markdown  
 # Usage
 
 After installing the Commit Message Generator, you can use it to create standardized commit messages for your projects.
@@ -32,6 +31,6 @@ python -m unittest
 ```
 
 The tests will verify that the script is generating commit messages correctly.
-```
+
 
 Let me know if you would like me to modify or expand on any of these examples!

@@ -29,10 +29,6 @@ Ensure the functionality of the Commit Message Generator by running the included
 python -m unittest
 ```
 
-## License
-
-This project is distributed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
 ## Contact 
 
 If you have any questions or comments about the Commit Message Generator, please feel free to open an issue in the repository.

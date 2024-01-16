@@ -1,6 +1,5 @@
 ### API_REFERENCE.md
 
-```markdown
 # API Reference
 
 ## commit_message_generator
@@ -34,5 +33,4 @@ data = {
 
 message = generate_commit_message(data)
 print(message)
-```
 ```
