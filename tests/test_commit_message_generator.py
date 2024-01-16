@@ -39,7 +39,6 @@ class TestCommitMessageGenerator(unittest.TestCase):
         self.assertIn('Authorization', kwargs['headers'])
         self.assertTrue(kwargs['headers']['Authorization'].startswith('Bearer'))
 
-    # Add more tests as needed to cover different scenarios and edge cases
 
 if __name__ == '__main__':
     unittest.main()

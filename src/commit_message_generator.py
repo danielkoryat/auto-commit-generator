@@ -118,8 +118,9 @@ def main():
             print('Failed to generate commit message.')
             exit(1)
 
-        commit_changes(commit_message)
-        print(f'Commit message generated and committed successfully with message: {commit_message}')
+        # commit_changes(commit_message)
+        # print(f'Commit message generated and committed successfully with message: {commit_message}')
+        print(commit_message)
     except RuntimeError as err:
         print(err)
         exit(1)
